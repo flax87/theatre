@@ -1,6 +1,7 @@
 package she.edu.theatre.service.performance.impls;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.annotation.Id;
 import org.springframework.stereotype.Service;
 import she.edu.theatre.datastorage.DataFake;
 import she.edu.theatre.model.Performance;
@@ -8,6 +9,7 @@ import she.edu.theatre.repository.PerformanceReporitory;
 import she.edu.theatre.service.performance.interfaces.IPerformanceService;
 
 import javax.annotation.PostConstruct;
+import java.time.LocalDateTime;
 import java.util.List;
 @Service
 public class PerformanceServiceImpl implements IPerformanceService {
@@ -24,16 +26,23 @@ public class PerformanceServiceImpl implements IPerformanceService {
 
     @Override
     public Performance create(Performance performance) {
-        return null;
-    }
-    @Override
-    public Performance get(String id) {
+        performance.setCreatedAt(LocalDateTime.now());
+
         return null;
     }
 
     @Override
+    public Performance get(String id) {
+
+        return performanceReporitory.findById(id).orElse(null);
+    }
+
+
+    @Override
     public Performance update(Performance performance) {
-        return null;
+        performance.setModifaidet(LocalDateTime.now());
+        return performanceReporitory.save(performance);
+
     }
 
     @Override
