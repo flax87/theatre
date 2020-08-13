@@ -1,10 +1,13 @@
 package she.edu.theatre.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.time.LocalDateTime;
 import java.util.Objects;
-
+@Document
 public class Actor {
-
+@Id
     private String id;
     private String name;
     private String surname;
@@ -35,6 +38,14 @@ public class Actor {
         this.modifaidet = modifaidet;
     }
 
+    public Actor(String name, String surname, String patronymic, String experience, int yearOfOrigin, int priceAnnualContract) {
+        this.name = name;
+        this.surname = surname;
+        this.patronymic = patronymic;
+        this.experience = experience;
+        this.yearOfOrigin = yearOfOrigin;
+        this.priceAnnualContract = priceAnnualContract;
+    }
     //get set
 
     public String getId() {

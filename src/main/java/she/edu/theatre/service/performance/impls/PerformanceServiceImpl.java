@@ -15,7 +15,7 @@ public class PerformanceServiceImpl implements IPerformanceService {
     DataFake dataFake;
     @Autowired
     PerformanceReporitory performanceReporitory;
-  //  @PostConstruct              //з fake витягуєм v mongo
+  // @PostConstruct              //з fake витягуєм v mongo
     void init(){
         List<Performance> list= dataFake.getPerformances();
         performanceReporitory.saveAll(list);
