@@ -33,7 +33,9 @@ public class DataFake {
 
     private List<EmploymentOfActors> employmentOfActors = new ArrayList<>(
             Arrays.asList(
-                    new EmploymentOfActors(actors.get(0),"Rande vu",)
+                    new EmploymentOfActors(actors.get(0),"Penokio",15000),
+                    new EmploymentOfActors(actors.get(0),"Pikasso",12000),
+                    new EmploymentOfActors(actors.get(0),"Albert",12000)
             )
     );
 
@@ -56,4 +58,11 @@ public class DataFake {
 
  //get set EmploymentOfActors
 
+    public List<EmploymentOfActors> getEmploymentOfActors() {
+        return employmentOfActors;
+    }
+
+    public void setEmploymentOfActors(List<EmploymentOfActors> employmentOfActors) {
+        this.employmentOfActors = employmentOfActors;
+    }
 }
