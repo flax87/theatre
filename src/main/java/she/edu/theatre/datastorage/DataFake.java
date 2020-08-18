@@ -33,7 +33,7 @@ public class DataFake {
 
     private List<EmploymentOfActors> employmentOfActors = new ArrayList<>(
             Arrays.asList(
-                    new EmploymentOfActors()
+                    new EmploymentOfActors(actors.get(0),"Rande vu",)
             )
     );
 
