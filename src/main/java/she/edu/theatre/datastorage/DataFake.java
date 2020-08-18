@@ -2,6 +2,7 @@ package she.edu.theatre.datastorage;
 
 import org.springframework.stereotype.Component;
 import she.edu.theatre.model.Actor;
+import she.edu.theatre.model.EmploymentOfActors;
 import she.edu.theatre.model.Performance;
 
 import java.util.ArrayList;
@@ -30,7 +31,13 @@ public class DataFake {
           )
     );
 
-//get set1
+    private List<EmploymentOfActors> employmentOfActors = new ArrayList<>(
+            Arrays.asList(
+                    new EmploymentOfActors()
+            )
+    );
+
+//get set Performance
     public List<Performance> getPerformances() {
         return performances;
     }
@@ -38,13 +45,15 @@ public class DataFake {
     public void setPerformances(List<Performance> performances) {
         this.performances = performances;
     }
- //2
+ //get set Actors
 
     public List<Actor> getActors() {
         return actors;
     }
-
     public void setActors(List<Actor> actors) {
         this.actors = actors;
     }
+
+ //get set EmploymentOfActors
+
 }
