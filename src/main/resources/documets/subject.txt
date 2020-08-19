@@ -24,5 +24,9 @@
 
 
 1.Model - Class
-2.Controlles list список акторів
-3.
+2.DataFake list список акторів
+3.Controller
+4.Repository
+5.interface
+6.interface - refactor mpl
+

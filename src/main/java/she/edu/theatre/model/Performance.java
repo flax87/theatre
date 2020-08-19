@@ -13,7 +13,7 @@ public class Performance {
 private String id;
 private String name;
 private String description;
-private int yearOfOrigin;
+private String yearOfOrigin;
 private int budget;
 private LocalDateTime createdAt;
 private LocalDateTime modifaidet;
@@ -21,9 +21,8 @@ private LocalDateTime modifaidet;
 //constr
 
 
-    public Performance(String id, String name,
-                       String description, int yearOfOrigin,
-                       int budget, LocalDateTime createdAt,
+    public Performance(String id, String name, String description,
+                       String yearOfOrigin, int budget, LocalDateTime createdAt,
                        LocalDateTime modifaidet) {
         this.id = id;
         this.name = name;
@@ -33,18 +32,25 @@ private LocalDateTime modifaidet;
         this.createdAt = createdAt;
         this.modifaidet = modifaidet;
     }
-    //empt constr
-    public Performance(){
 
+    public Performance() {
     }
 
-
-    public Performance(String name, String description, int yearOfOrigin, int budget) {
-        this.name = name;
-        this.description = description;
-        this.yearOfOrigin = yearOfOrigin;
+    public Performance(int budget) {
         this.budget = budget;
     }
+
+    public Performance(String yearOfOrigin) {
+        this.yearOfOrigin = yearOfOrigin;
+    }
+
+    //empt constr
+    public Performance(String gamlet, String shekspir, String s, int i){
+
+    }
+
+
+
     //get set
 
     public String getId() {
@@ -71,11 +77,11 @@ private LocalDateTime modifaidet;
         this.description = description;
     }
 
-    public int getYearOfOrigin() {
+    public String getYearOfOrigin() {
         return yearOfOrigin;
     }
 
-    public void setYearOfOrigin(int yearOfOrigin) {
+    public void setYearOfOrigin(String yearOfOrigin) {
         this.yearOfOrigin = yearOfOrigin;
     }
 
@@ -103,7 +109,9 @@ private LocalDateTime modifaidet;
         this.modifaidet = modifaidet;
     }
 
+
     //string
+
 
     @Override
     public String toString() {
@@ -111,7 +119,7 @@ private LocalDateTime modifaidet;
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
-                ", yearOfOrigin=" + yearOfOrigin +
+                ", yearOfOrigin='" + yearOfOrigin + '\'' +
                 ", budget=" + budget +
                 ", createdAt=" + createdAt +
                 ", modifaidet=" + modifaidet +
@@ -119,16 +127,24 @@ private LocalDateTime modifaidet;
     }
 
     //equals
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Performance that = (Performance) o;
-        return getId().equals(that.getId());
+        return getBudget() == that.getBudget() &&
+                getId().equals(that.getId()) &&
+                getName().equals(that.getName()) &&
+                getDescription().equals(that.getDescription()) &&
+                getYearOfOrigin().equals(that.getYearOfOrigin()) &&
+                getCreatedAt().equals(that.getCreatedAt()) &&
+                getModifaidet().equals(that.getModifaidet());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId());
+        return Objects.hash(getId(), getName(), getDescription(), getYearOfOrigin(),
+                getBudget(), getCreatedAt(), getModifaidet());
     }
 }
