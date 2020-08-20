@@ -45,10 +45,13 @@ private LocalDateTime modifaidet;
     }
 
     //empt constr
-    public Performance(String gamlet, String shekspir, String s, int i){
 
+    public Performance(String name, String description, String yearOfOrigin, int budget) {
+        this.name = name;
+        this.description = description;
+        this.yearOfOrigin = yearOfOrigin;
+        this.budget = budget;
     }
-
 
 
     //get set
