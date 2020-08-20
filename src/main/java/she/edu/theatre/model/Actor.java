@@ -1,3 +1,13 @@
+/*
+ * Class name :  PalindromeService
+ *
+ * @author Oleksii Shevchenko
+ *
+ * Description:
+ *
+ * read a "subject.txt"
+ *
+ */
 package she.edu.theatre.model;
 
 import org.springframework.data.annotation.Id;

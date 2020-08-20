@@ -1,3 +1,13 @@
+/*
+ * Class name :  PalindromeService
+ *
+ * @author Oleksii Shevchenko
+ *
+ * Description:
+ *
+ * read a "subject.txt"
+ *
+ */
 package she.edu.theatre.service.performance.impls;
 
 import org.springframework.beans.factory.annotation.Autowired;
